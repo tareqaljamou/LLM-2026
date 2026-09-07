@@ -42,3 +42,12 @@ whitson-knowledge-assistant/
 ├── README.md
 ├── pyproject.toml
 └── uv.lock
+## Screenshots
+
+### Grounded technical answer
+
+![Whitson Knowledge Assistant demo](screenshots/whitson-assistant-demo.png)
+
+### Unknown-question behavior
+
+![Whitson Knowledge Assistant refusing an unsupported question](screenshots/whitson-assistant-unknown-question.png)
