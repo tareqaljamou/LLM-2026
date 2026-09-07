@@ -8,7 +8,13 @@ authors = [
     { name = "Tareq Aljamou", email = "tareq.aljamou@icloud.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "openai>=3.8.0",
+    "python-dotenv>=1.2.3",
+    "requests>=2.34.2",
+    "streamlit>=1.63.0",
+]
 
 [project.scripts]
 whitson-knowledge-assistant = "whitson_knowledge_assistant:main"
@@ -16,3 +22,8 @@ whitson-knowledge-assistant = "whitson_knowledge_assistant:main"
 [build-system]
 requires = ["uv_build>=0.12.7,<0.13.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
