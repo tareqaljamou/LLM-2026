@@ -1,0 +1,18 @@
+[project]
+
+name = "whitson-knowledge-assistant"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Tareq Aljamou", email = "tareq.aljamou@icloud.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+whitson-knowledge-assistant = "whitson_knowledge_assistant:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
