@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is nodal analysis?",
+    "expected_topic": "nodal analysis",
+    "should_answer": true
+  },
+  {
+    "question": "What is the relationship between IPR and VLP?",
+    "expected_topic": "IPR and VLP",
+    "should_answer": true
+  },
+  {
+    "question": "What information is used to calculate the productivity index?",
+    "expected_topic": "productivity index",
+    "should_answer": true
+  },
+  {
+    "question": "What is the capital of France?",
+    "expected_topic": "unrelated question",
+    "should_answer": false
+  }
+]
