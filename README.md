@@ -1,13 +1,14 @@
-Whitson Knowledge Assistant
+# Whitson Knowledge Assistant
 
-A small RAG assistant that answers petroleum engineering questions from public Whitson documentation, with numbered citations. If the sources don't contain the answer, it says so instead of guessing.
+A small RAG assistant that answers petroleum engineering questions from **public Whitson documentation**, with numbered citations. If the sources don't contain the answer, it says so instead of guessing.
 
-Built for petroleum engineers and data people who want quick, source-backed answers. Whitson is a petroleum engineering software and consulting company known for PVT and reservoir fluid tools. Made as a project for the DataTalks.Club LLM Zoomcamp 2026.
+Built for petroleum engineers and data people who want quick, source-backed answers. [Whitson](https://whitson.com) is a petroleum engineering software and consulting company known for PVT and reservoir fluid tools. Made as a project for the DataTalks.Club LLM Zoomcamp 2026.
 
-This prototype uses public sources only. It does not use private Whitson documents or customer data.
+> This prototype uses public sources only. It does not use private Whitson documents or customer data.
 
-How it works
-text
+## How it works
+
+```text
 Public Whitson sources (data/sources.json)
         |
         v
@@ -24,11 +25,13 @@ OpenAI answer, using only the retrieved text, with [1], [2] citations
         |
         v
 Streamlit app or command-line chat
-Setup
+```
 
-You need uv and an OpenAI API key.
+## Setup
 
-bash
+You need [uv](https://docs.astral.sh/uv/) and an OpenAI API key.
+
+```bash
 git clone https://github.com/tareqaljamou/LLM-2026.git
 cd LLM-2026
 
@@ -39,45 +42,52 @@ uv run python -m whitson_knowledge_assistant.ingest      # download and index th
 uv run streamlit run src/whitson_knowledge_assistant/app.py   # web app
 # or the terminal version:
 uv run python -m whitson_knowledge_assistant.chat
+```
 
 Run the tests and the evaluation:
 
-bash
+```bash
 uv run pytest
 uv run python evaluation/run_evaluation.py
-Results
+```
 
-The evaluation script (evaluation/run_evaluation.py) checks that the assistant answers questions the sources cover, and declines questions they don't. It uses the question list in evaluation/questions.json.
+## Results
 
-<!-- Fill in after you run the script, using the real output: -->
+The evaluation script (`evaluation/run_evaluation.py`) checks that the assistant answers questions the sources cover, and declines questions they don't. It uses the question list in `evaluation/questions.json`.
 
-Result: X of Y questions behaved as expected (model: gpt-4o-mini, date: DD Month 2026).
-
-10 of 12 questions behaved as expected** (gpt-4o-mini, 3 November 2026).
+**Result: 10 of 12 questions behaved as expected** (gpt-4o-mini, 3 November 2026).
 
 - All 4 off-topic or unsupported questions were correctly declined.
 - 6 of 8 in-scope questions were answered. The 2 misses are PVT questions (whitsonPVT, equation of state). The indexed pages mostly cover nodal analysis, so this is most likely a source coverage gap.
 
-Limitations
-Keyword retrieval only. No embeddings yet, so questions worded differently from the source text can be missed.
-Few sources. It indexes only the pages listed in data/sources.json.
-Answers can still be wrong. The model is told to answer only from the retrieved text, but this is not guaranteed. Check the cited sources for anything important.
-Small evaluation set. Citation accuracy is not measured yet.
-Next steps
-Add embedding-based retrieval and compare it with keyword search.
-Add more sources and a larger question set.
-Measure citation accuracy.
-Screenshots
-Answer with citations
+This test only checks answer versus decline. It does not yet measure whether each citation supports its statement, so treat it as a basic sanity check.
 
-Whitson Knowledge Assistant demo
+## Limitations
 
-Declining an unsupported question
+- **Keyword retrieval only.** No embeddings yet, so questions worded differently from the source text can be missed.
+- **Few sources.** It indexes only the pages listed in `data/sources.json`.
+- **Answers can still be wrong.** The model is told to answer only from the retrieved text, but this is not guaranteed. Check the cited sources for anything important.
+- **Small evaluation set.** Citation accuracy is not measured yet.
 
-Whitson Knowledge Assistant declining an unsupported question
+## Next steps
 
-Project structure
-text
+- Add embedding-based retrieval and compare it with keyword search.
+- Add more sources and a larger question set.
+- Measure citation accuracy.
+
+## Screenshots
+
+### Answer with citations
+
+![Whitson Knowledge Assistant demo](screenshots/whitson-assistant-demo.png)
+
+### Declining an unsupported question
+
+![Whitson Knowledge Assistant declining an unsupported question](screenshots/whitson-assistant-unknown-question.png)
+
+## Project structure
+
+```text
 LLM-2026/
 ├── data/sources.json
 ├── docs/project-charter.md
@@ -92,6 +102,8 @@ LLM-2026/
 ├── tests/
 ├── .env.example
 └── pyproject.toml
-License
+```
+
+## License
 
 MIT
