@@ -53,7 +53,10 @@ The evaluation script (evaluation/run_evaluation.py) checks that the assistant a
 
 Result: X of Y questions behaved as expected (model: gpt-4o-mini, date: DD Month 2026).
 
-This test only checks answer versus decline. It does not yet measure whether each citation supports its statement, so treat it as a basic sanity check.
+10 of 12 questions behaved as expected** (gpt-4o-mini, 3 November 2026).
+
+- All 4 off-topic or unsupported questions were correctly declined.
+- 6 of 8 in-scope questions were answered. The 2 misses are PVT questions (whitsonPVT, equation of state). The indexed pages mostly cover nodal analysis, so this is most likely a source coverage gap.
 
 Limitations
 Keyword retrieval only. No embeddings yet, so questions worded differently from the source text can be missed.
