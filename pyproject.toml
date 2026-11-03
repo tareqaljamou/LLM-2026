@@ -1,8 +1,8 @@
-[RAG assistant over public Whitson documentation, with cited answers]
+[project]
 
 name = "whitson-knowledge-assistant"
 version = "0.1.0"
-description = "Add your description here"
+description = "RAG assistant over public Whitson documentation, with cited answers"
 readme = "README.md"
 authors = [
     { name = "Tareq Aljamou", email = "tareq.aljamou@icloud.com" }
