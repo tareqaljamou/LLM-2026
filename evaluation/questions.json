@@ -15,8 +15,48 @@
     "should_answer": true
   },
   {
+    "question": "What is the operating point in nodal analysis?",
+    "expected_topic": "operating point",
+    "should_answer": true
+  },
+  {
+    "question": "What is inflow performance relationship?",
+    "expected_topic": "IPR",
+    "should_answer": true
+  },
+  {
+    "question": "What is vertical lift performance?",
+    "expected_topic": "VLP",
+    "should_answer": true
+  },
+  {
+    "question": "What does whitsonPVT do?",
+    "expected_topic": "whitsonPVT",
+    "should_answer": true
+  },
+  {
+    "question": "What is an equation of state in PVT modelling?",
+    "expected_topic": "EOS",
+    "should_answer": true
+  },
+  {
     "question": "What is the capital of France?",
     "expected_topic": "unrelated question",
+    "should_answer": false
+  },
+  {
+    "question": "Who won the football World Cup in 2022?",
+    "expected_topic": "unrelated question",
+    "should_answer": false
+  },
+  {
+    "question": "How do I bake sourdough bread?",
+    "expected_topic": "unrelated question",
+    "should_answer": false
+  },
+  {
+    "question": "What is the price of Whitson+ for a company licence?",
+    "expected_topic": "not in public sources",
     "should_answer": false
   }
 ]
