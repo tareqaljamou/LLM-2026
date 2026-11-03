@@ -1,4 +1,4 @@
-[project]
+[RAG assistant over public Whitson documentation, with cited answers]
 
 name = "whitson-knowledge-assistant"
 version = "0.1.0"
